@@ -24,5 +24,22 @@
   * In x86 --  mode stored in `EFLAGS` register
   * In MIPS -- mode stored in the `status` register
 
-### A model of a CPU
 ![A model of a CPU](/assets/images/CPU.png)
+![A CPU with Dual-mode Operation](assets/images/dual-mode-cpu.png)
+
+### Hardware Support
+  * Privileged instructions
+    * Available to kernel
+    * Not available to user code
+  * Limits on memory access
+    * Prevents user code from overwriting the kernel
+  * Timer
+    * To regain control from a user program in a loop
+
+### Memory Protection / Usage
+  * For an application process to execute:
+    * The process must be in memory
+    * The OS must be in memory
+      * Starts program
+      * Handles interrupts and processor exceptions
+      * Handles application system calls
